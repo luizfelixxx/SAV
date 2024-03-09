@@ -2,38 +2,33 @@ package algoritmos;
 
 import utilidades.Impressora;
 
-
 public class BubbleSort<T extends Comparable<T>> extends AlgoritmoClassificacao<T>{
     @Override
-    public void organizar(T[] elementos, String tipoOrdenamento) {
-        int comprimento = elementos.length;
+    public void aplicarOrdenacao(T[] elementos, String tipoOrdenamento) {
+        int comprimento = elementos.length; int trocasRealizadas = 0;
         boolean trocou;
         long tempoInicial = System.currentTimeMillis();
-        long tempoPausa = 0;
+
         do {
             trocou = false;
             for (int i = 0; i < comprimento - 1; i++) {
                 
-                if (tipoOrdenamento.equals("az") && elementos[i].compareTo(elementos[i + 1]) > 0 ||
-                    tipoOrdenamento.equals("za") && elementos[i].compareTo(elementos[i + 1]) < 0) {
+                if (tipoOrdenamento.equals(ORDENACAO_CRESCENTE) && elementos[i].compareTo(elementos[i + 1]) > 0 ||
+                    tipoOrdenamento.equals(ORDENACAO_DECRESCENTE) && elementos[i].compareTo(elementos[i + 1]) < 0) {
                     T temporario = elementos[i];
                     elementos[i] = elementos[i + 1];
                     elementos[i + 1] = temporario;
+
                     trocou = true;
+                    trocasRealizadas += 1;
 
                     Impressora.imprimirArray(elementos);
-
-                    try{
-                        Thread.sleep(this.tempoPausaExecucao);
-                        tempoPausa += tempoPausaExecucao;
-                    } catch (InterruptedException exception){
-                        System.out.println(exception.getMessage());
-                    }
+                    esperarTempo();
                 }
             }
-
         } while (trocou);
         long tempoFinal = System.currentTimeMillis();
-        Impressora.imprimirTempoExecucao(calcularTempoExecucao(tempoFinal, tempoInicial, tempoPausa));
+        long tempoPausaTotal = calcularTempoPausaTotal(trocasRealizadas);
+        Impressora.imprimirTempoExecucao(calcularTempoExecucao(tempoFinal, tempoInicial, tempoPausaTotal));
     }
 }

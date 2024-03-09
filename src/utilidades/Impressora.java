@@ -10,8 +10,7 @@ public class Impressora {
     public static <T> void imprimirArray(T[] valores){
         System.out.println(Arrays.toString(valores));
     }
-
     public static void imprimirTempoExecucao(double valor){
-        System.out.println(valor);
+        System.out.println("Tempo execução: " + valor);
     }
 }

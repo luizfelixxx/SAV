@@ -1,6 +1,8 @@
+import utilidades.Argumentos;
+
 public class Main {
     public static void main(String[] args) {
-    Parametros validacao = new Parametros();
-    validacao.validacaoParametros(args);
+    Argumentos argumentos = new Argumentos();
+    argumentos.processarParametros(args);
     }
 }
