@@ -12,7 +12,8 @@ public class SelectionSort<T extends Comparable<T>> extends AlgoritmoClassificac
         for (int i = 0; i < comprimento - 1; i++){
             int index_menor = i;
             for (int j = i+1; j < comprimento; j++){
-                if (elementos[j].compareTo(elementos[index_menor]) < 0) {
+                if ((tipoOrdenamento.equals(ORDENACAO_CRESCENTE) && elementos[j].compareTo(elementos[index_menor]) < 0) ||
+                    (tipoOrdenamento.equals(ORDENACAO_DECRESCENTE) && elementos[j].compareTo(elementos[index_menor]) > 0)) {
                     index_menor = j;
                 }
             }

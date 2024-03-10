@@ -11,5 +11,4 @@ public class TempoUtil {
     public static long calcularTempoPausaTotal(int tempoPausaExecucao, int trocasRealizadas) {
         return (long) tempoPausaExecucao * trocasRealizadas;
     }
-
 }
