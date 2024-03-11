@@ -3,7 +3,6 @@ package utilidades;
 import java.util.HashMap;
 import java.util.Map;
 
-
 public class Argumentos {
     private static final String TIPO = "t";
     private static final String VALORES = "v";
@@ -16,9 +15,9 @@ public class Argumentos {
 
     public void processarParametros(String[] args) {
         extrairParametros(args);
-        // Falta resolver a questão para transformar tudo em lowerCase
+
         String tipo = Validacao.validarArgumentoTipo(mapa, TIPO);
-        String valores = mapa.get(VALORES); // Sem validaçãoArgumento
+        String valores = mapa.get(VALORES);
         String tipoAlgoritmo = Validacao.validarTipoAlgoritmo(mapa, ALGORITMO);
         String tipoOrdenamento = Validacao.validarTipoOrdenamento(mapa, ORDENAMENTO);
         String tipoValorLista = Validacao.validarTipoValorLista(mapa, VALOR_LISTA);

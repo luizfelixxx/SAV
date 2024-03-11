@@ -1,7 +1,7 @@
 package algoritmos;
 
 import utilidades.Impressora;
-// Falta consertar a lógica da ordenação - 08/03 00h23
+
 public class InsertionSort<T extends Comparable<T>> extends AlgoritmoClassificacao<T>{
     @Override
     public void aplicarOrdenacao(T[] elementos, String tipoOrdenamento) {
