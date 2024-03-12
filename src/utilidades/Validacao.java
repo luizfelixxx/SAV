@@ -6,7 +6,7 @@ import java.util.Map;
 public class Validacao {
     public static Integer[] validarValoresNumerico(String valores) {
         try {
-            Integer[] numeros = Arrays.stream(valores.split(",")).map(String::trim).map(Integer::parseInt).toArray(Integer[]::new);
+            Integer[] numeros = Arrays.stream(valores.split(",")).map(Integer::parseInt).toArray(Integer[]::new);
             Impressora.imprimirValores(numeros);
             return numeros;
         } catch (NumberFormatException exception) {

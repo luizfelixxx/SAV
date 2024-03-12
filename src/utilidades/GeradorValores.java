@@ -14,7 +14,7 @@ public class GeradorValores {
             valoresAleatoriosInt[i] = valorAleatorio - 1000;
         }
         return Arrays.stream(valoresAleatoriosInt).mapToObj(String::valueOf)
-                .collect(Collectors.joining(", "));
+                .collect(Collectors.joining(","));
     }
     public static String gerarValoresCaracateresAleatorios(int quantidadeValoresAleatorios){
         Random random = new Random();
